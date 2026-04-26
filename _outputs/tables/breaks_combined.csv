@@ -1,0 +1,8 @@
+break_no,coffee_year_month,method
+1,1999/2000-m09,Binseg (primary)
+2,2004/2005-m04,Binseg (primary)
+3,2006/2007-m10,Binseg (primary)
+4,2020/2021-m01,Binseg (primary)
+5,2021/2022-m10,Binseg (primary)
+1,2004/2005-m04,PELT (robustness)
+2,2009/2010-m02,PELT (robustness)

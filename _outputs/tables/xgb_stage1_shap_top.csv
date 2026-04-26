@@ -1,0 +1,14 @@
+feature,mean_abs_shap
+nardl_pred_t,0.2634
+AUC_lag1,0.0874
+NY_vol3_lag1,0.0366
+NY_lag12,0.0255
+NY_lag1,0.0209
+FX_lag2,0.0193
+NY_vol12_lag1,0.0154
+NY_lag3,0.014
+FX_lag1,0.0135
+NY_neg_lag1,0.0117
+Stage1_ECT_lag1,0.0114
+NY_lag2,0.0104
+NY_pos_lag1,0.0068

@@ -1,0 +1,15 @@
+Codes/
+├── _legacy/                          (preserves the existing zip)
+│   └── Python Code (legacy).zip
+├── README.md                         (new, v3-aligned)
+├── requirements.txt
+├── config.py                         (paths, seeds, sample window, CV settings)
+├── step1_load_and_prepare.py         (real workbook -> USD/kg, coffee-year indexed)
+├── step2_diagnostics.py              (ADF, PP, KPSS; Bai-Perron via ruptures)
+├── step3a_nardl_stage1.py            (monthly auction <- NY Futures + FX)
+├── step3b_nardl_stage2.py            (annual farmgate <- annual auction)
+├── step4a_xgb_stage1_monthly.py      (12-feature, rolling-origin, NARDL refit-in-fold)
+├── step4b_xgb_stage2_annual.py       (6-feature, end-of-CY baseline + pre-season variant)
+├── step5_dm_and_shap.py              (DM with HLN correction, SHAP on validation preds)
+├── step6_robustness.py               (alt benchmarks, ablations, FX-free, cherry desc.)
+└── step7_figures.py                  (rebuilt to read v3 outputs)

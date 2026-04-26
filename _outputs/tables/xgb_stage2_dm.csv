@@ -1,0 +1,3 @@
+variant,comparison,DM,HLN,p_value,n_pairs
+baseline,XGBoost vs NARDL (Stage 2),1.8265,1.7685,0.077,16
+preseason,XGBoost vs NARDL (Stage 2),-1.845,-1.7825,0.0747,15

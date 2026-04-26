@@ -1,0 +1,2 @@
+n_obs,p,q,r,p_sbc,q_sbc,r_sbc,selection,include_fx,international,theta1,L_pos,L_neg,wald_LR_p,wald_SR_p,bounds_F,bdm_t,half_life_m,R2,BIC
+296,1,2,0,1,0,0,BG-augmented,True,ny_usdkg,-0.28961,0.83445,0.7039,0.0001,0.0573,18.0723,-7.1528,2.027,0.3442,-279.015

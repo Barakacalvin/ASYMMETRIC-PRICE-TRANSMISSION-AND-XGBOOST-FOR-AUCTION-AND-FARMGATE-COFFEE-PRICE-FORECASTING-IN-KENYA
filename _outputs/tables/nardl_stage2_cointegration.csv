@@ -1,0 +1,4 @@
+test,F_stat,I0_5pct,I1_5pct,BDM_t,verdict
+"Narayan small-sample Case III (k=2, n~25) — intercept, no trend",3.8531,4.094,4.954,-3.1887,no_cointegration
+"Narayan small-sample Case II (k=2, n~25) — restricted intercept",3.8531,3.708,4.371,-3.1887,inconclusive
+"Pesaran asymptotic Case III (k=2) — intercept, no trend",3.8531,3.79,4.85,-3.1887,inconclusive

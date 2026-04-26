@@ -1,0 +1,228 @@
+2026-04-25 12:53:20 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 12:53:20 INFO    dissertation.runner              | Pipeline log: C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\logs\pipeline_20260425T095320Z.log
+2026-04-25 12:53:20 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 12:53:20 INFO    dissertation.run_all             | Master log file : C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\logs\pipeline_20260425T095320Z.log
+2026-04-25 12:53:20 INFO    dissertation.run_all             | Working dir     : C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2
+2026-04-25 12:53:20 INFO    dissertation.run_all             | Python interpreter: C:\Users\cbaraka.AFA\AppData\Local\Programs\Python\Python313\python.exe
+2026-04-25 12:53:20 INFO    dissertation.run_all             | Running 8 steps in sequence
+2026-04-25 12:53:20 INFO    dissertation.run_all             | ------------------------------------------------------------------------------
+2026-04-25 12:53:20 INFO    dissertation.run_all             | [1/8] START: step1_load_and_prepare.py
+2026-04-25 12:53:21 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 12:53:21 INFO    dissertation.runner              | Pipeline log: C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\logs\pipeline_20260425T095320Z.log
+2026-04-25 12:53:21 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 12:53:21 INFO    __main__                         | Reading: C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\Data\Datasets for Modelling  Updated Final.xlsx
+2026-04-25 12:53:21 INFO    __main__                         | Monthly panel:  312 rows   (expected 312, range 1998/1999 .. 2023/2024)
+2026-04-25 12:53:21 INFO    __main__                         | Annual panel :   26 rows   (expected 26)
+2026-04-25 12:53:21 INFO    __main__                         | 
+Wrote C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\data\monthly_clean.csv
+2026-04-25 12:53:21 INFO    __main__                         | Wrote C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\data\annual_clean.csv
+2026-04-25 12:53:21 INFO    __main__                         | Wrote C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\data\data_audit.json
+2026-04-25 12:53:21 INFO    dissertation.run_all             | [1/8] DONE : step1_load_and_prepare.py in 0.9s
+2026-04-25 12:53:21 INFO    dissertation.run_all             | ------------------------------------------------------------------------------
+2026-04-25 12:53:21 INFO    dissertation.run_all             | [2/8] START: step2_diagnostics.py
+2026-04-25 12:53:23 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 12:53:23 INFO    dissertation.runner              | Pipeline log: C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\logs\pipeline_20260425T095320Z.log
+2026-04-25 12:53:23 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 12:53:23 INFO    __main__                         | 
+=== Unit-root battery ===
+2026-04-25 12:53:23 INFO    __main__                         |  series transformation  ADF_stat  ADF_p  PP_stat   PP_p  KPSS_stat  KPSS_p   n        verdict
+   lnNY          level   -1.3149 0.6223  -1.5133 0.5269     1.2498  0.0100 310 I(1) candidate
+   lnNY             d1  -15.0113 0.0000 -15.1780 0.0000     0.0875  0.1000 310           I(0)
+  lnAUC          level   -1.8195 0.3708  -2.5780 0.0976     1.7751  0.0100 286 I(1) candidate
+  lnAUC             d1   -5.0808 0.0000 -14.8540 0.0000     0.0412  0.1000 287           I(0)
+  lnICO          level   -0.7176 0.8421  -0.8858 0.7926     1.5653  0.0100 307 I(1) candidate
+  lnICO             d1  -14.1851 0.0000 -14.4331 0.0000     0.1649  0.1000 307           I(0)
+  lnCOL          level   -1.1792 0.6825  -1.2385 0.6568     1.4608  0.0100 310 I(1) candidate
+  lnCOL             d1  -14.2057 0.0000 -14.2308 0.0000     0.0921  0.1000 310           I(0)
+   lnFX          level   -1.1892 0.6782  -1.1193 0.7073     2.2781  0.0100 308 I(1) candidate
+   lnFX             d1   -8.6760 0.0000 -13.4524 0.0000     0.0555  0.1000 308           I(0)
+ lnFG_y          level   -1.6238 0.4707  -1.0515 0.7340     0.5759  0.0248  24 I(1) candidate
+ lnFG_y             d1   -2.9303 0.0419  -5.6898 0.0000     0.2136  0.1000  15           I(0)
+lnAUC_y          level   -0.2819 0.9280  -1.1178 0.7079     0.5379  0.0331  16 I(1) candidate
+lnAUC_y             d1   -3.7947 0.0030  -5.2802 0.0000     0.1918  0.1000  15           I(0)
+ lnNY_y          level   -1.4030 0.5808  -1.1361 0.7004     0.4345  0.0623  25      ambiguous
+ lnNY_y             d1   -2.2734 0.1807  -4.8235 0.0000     0.1005  0.1000  15           I(0)
+2026-04-25 12:53:23 INFO    __main__                         | 
+=== Breaks (Binseg, primary) ===
+2026-04-25 12:53:23 INFO    __main__                         |  break_no coffee_year_month           method
+        1     1999/2000-m09 Binseg (primary)
+        2     2004/2005-m04 Binseg (primary)
+        3     2006/2007-m10 Binseg (primary)
+        4     2020/2021-m01 Binseg (primary)
+        5     2021/2022-m10 Binseg (primary)
+2026-04-25 12:53:23 INFO    __main__                         | 
+=== Breaks (PELT, robustness) ===
+2026-04-25 12:53:23 INFO    __main__                         |  break_no coffee_year_month            method
+        1     2004/2005-m04 PELT (robustness)
+        2     2009/2010-m02 PELT (robustness)
+2026-04-25 12:53:23 INFO    __main__                         | 
+Wrote C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\tables\unit_root.csv, C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\tables\breaks_binseg.csv, C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\tables\breaks_pelt.csv.
+2026-04-25 12:53:24 INFO    dissertation.run_all             | [2/8] DONE : step2_diagnostics.py in 2.4s
+2026-04-25 12:53:24 INFO    dissertation.run_all             | ------------------------------------------------------------------------------
+2026-04-25 12:53:24 INFO    dissertation.run_all             | [3/8] START: step3a_nardl_stage1.py
+2026-04-25 12:53:25 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 12:53:25 INFO    dissertation.runner              | Pipeline log: C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\logs\pipeline_20260425T095320Z.log
+2026-04-25 12:53:25 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 12:53:29 INFO    __main__                         | 
+=== Stage 1 NARDL — four-spec baseline matrix ===
+2026-04-25 12:53:29 INFO    __main__                         |                spec  n_obs  p  q  r  p_sbc  q_sbc  r_sbc    selection  include_fx international   theta1   L_pos   L_neg  wald_LR_p  wald_SR_p  bounds_F   bdm_t  half_life_m     R2      BIC
+            NY + FX    296  1  2  0      1      0      0 BG-augmented        True      ny_usdkg -0.28961 0.83445 0.70390     0.0001     0.0573   18.0723 -7.1528        2.027 0.3442 -279.015
+       NY (FX-free)    298  1  0  0      1      0      0     SBC-only       False      ny_usdkg -0.25799 0.85233 0.79084     0.0040     0.0175   14.6678 -6.4245        2.323 0.3093 -300.677
+     Colombian + FX    296  2  2  0      1      0      0 BG-augmented        True     col_usdkg -0.30980 0.84798 0.72089     0.0004     0.2833   14.2848 -6.4637        1.869 0.3578 -279.542
+Colombian (FX-free)    296  1  2  0      1      0      0 BG-augmented       False     col_usdkg -0.29634 0.87012 0.81677     0.0145     0.3364   17.1011 -7.0542        1.972 0.3343 -285.979
+2026-04-25 12:53:29 INFO    __main__                         | 
+Diagnostics across specs:
+2026-04-25 12:53:29 INFO    __main__                         |                spec  BG12_stat  BG12_p  BP_stat   BP_p  JB_stat  JB_p
+            NY + FX    35.7915  0.0003   9.5632 0.6542  82.8015   0.0
+       NY (FX-free)    42.5268  0.0000   4.3434 0.6303  47.7062   0.0
+     Colombian + FX    37.7934  0.0002  21.0413 0.0721  87.5969   0.0
+Colombian (FX-free)    43.3138  0.0000  13.3596 0.2043  93.2504   0.0
+2026-04-25 12:53:29 INFO    __main__                         | Wrote Stage 1 outputs to C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\tables
+2026-04-25 12:53:29 INFO    dissertation.run_all             | [3/8] DONE : step3a_nardl_stage1.py in 5.7s
+2026-04-25 12:53:29 INFO    dissertation.run_all             | ------------------------------------------------------------------------------
+2026-04-25 12:53:29 INFO    dissertation.run_all             | [4/8] START: step3b_nardl_stage2.py
+2026-04-25 12:53:31 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 12:53:31 INFO    dissertation.runner              | Pipeline log: C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\logs\pipeline_20260425T095320Z.log
+2026-04-25 12:53:31 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 12:53:31 INFO    __main__                         | Stage 2 forced (m=1, n=1) sensitivity: bounds F=2.695, BDM t=-2.447, BIC=-65.67
+2026-04-25 12:53:31 INFO    __main__                         | 
+=== Stage 2 NARDL ===
+2026-04-25 12:53:31 INFO    __main__                         |                           0
+specification  SBC-selected
+n_obs                    24
+m                         0
+n                         0
+theta1             -0.68975
+L_pos               0.95356
+L_neg               0.89115
+wald_LR_p            0.0546
+bounds_F             3.8531
+bdm_t               -3.1887
+half_life_y           0.592
+R2                   0.9792
+BIC                 -74.305
+2026-04-25 12:53:31 INFO    dissertation.run_all             | [4/8] DONE : step3b_nardl_stage2.py in 1.7s
+2026-04-25 12:53:31 INFO    dissertation.run_all             | ------------------------------------------------------------------------------
+2026-04-25 12:53:31 INFO    dissertation.run_all             | [5/8] START: step4a_xgb_stage1_monthly.py
+2026-04-25 12:53:33 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 12:53:33 INFO    dissertation.runner              | Pipeline log: C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\logs\pipeline_20260425T095320Z.log
+2026-04-25 12:53:33 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 12:53:33 INFO    __main__                         | Stage 1 rolling-origin CV: 252 folds planned (initial train=60, total months=312)
+2026-04-25 12:53:35 INFO    __main__                         |   [fold 1/252] Optuna retune (TPE, 50 trials)
+2026-04-25 12:54:30 INFO    __main__                         |   progress: fold 25/252 (10%) elapsed 56.1s
+2026-04-25 12:55:17 INFO    __main__                         |   progress: fold 50/252 (20%) elapsed 103.4s
+2026-04-25 12:55:19 INFO    __main__                         |   [fold 51/252] Optuna retune (TPE, 50 trials)
+2026-04-25 12:56:14 INFO    __main__                         |   progress: fold 75/252 (30%) elapsed 160.4s
+2026-04-25 12:57:00 INFO    __main__                         |   progress: fold 100/252 (40%) elapsed 206.3s
+2026-04-25 12:57:02 INFO    __main__                         |   [fold 101/252] Optuna retune (TPE, 50 trials)
+2026-04-25 12:57:54 INFO    __main__                         |   progress: fold 125/252 (50%) elapsed 260.5s
+2026-04-25 12:58:41 INFO    __main__                         |   progress: fold 150/252 (60%) elapsed 307.6s
+2026-04-25 12:58:43 INFO    __main__                         |   [fold 151/252] Optuna retune (TPE, 50 trials)
+2026-04-25 12:59:37 INFO    __main__                         |   progress: fold 175/252 (69%) elapsed 363.2s
+2026-04-25 13:00:23 INFO    __main__                         |   progress: fold 200/252 (79%) elapsed 409.2s
+2026-04-25 13:01:15 INFO    __main__                         |   progress: fold 225/252 (89%) elapsed 461.9s
+2026-04-25 13:02:03 INFO    __main__                         |   progress: fold 250/252 (99%) elapsed 509.4s
+2026-04-25 13:02:05 INFO    __main__                         |   [fold 251/252] Optuna retune (TPE, 50 trials)
+2026-04-25 13:02:14 INFO    __main__                         |   progress: fold 252/252 (100%) elapsed 520.3s
+2026-04-25 13:02:14 INFO    __main__                         | Stage 1 CV finished: 240 successful / 252 planned (12 skipped)
+2026-04-25 13:02:14 INFO    __main__                         |   skip-reason tally:
+2026-04-25 13:02:14 INFO    __main__                         |       12 x target NaN (e.g., recess month)
+2026-04-25 13:02:16 INFO    __main__                         | 
+=== Stage 1 XGBoost rolling-origin CV ===
+2026-04-25 13:02:16 INFO    __main__                         | Validation pairs : 240
+2026-04-25 13:02:16 INFO    __main__                         | RMSE (log)  XGBoost: 0.1640    NARDL: 0.1474
+2026-04-25 13:02:16 INFO    __main__                         | DM HLN p-value (XGB vs NARDL): 0.0133
+2026-04-25 13:02:17 INFO    dissertation.run_all             | [5/8] DONE : step4a_xgb_stage1_monthly.py in 525.6s
+2026-04-25 13:02:17 INFO    dissertation.run_all             | ------------------------------------------------------------------------------
+2026-04-25 13:02:17 INFO    dissertation.run_all             | [6/8] START: step4b_xgb_stage2_annual.py
+2026-04-25 13:02:19 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 13:02:19 INFO    dissertation.runner              | Pipeline log: C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\logs\pipeline_20260425T095320Z.log
+2026-04-25 13:02:19 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 13:02:20 INFO    __main__                         | Stage 2 rolling-origin CV (variant=baseline): 16 folds planned
+2026-04-25 13:02:29 INFO    __main__                         |   [baseline fold 1/16] year=2008/2009  xgb=1.0283  nardl=1.1382  actual=1.1333
+2026-04-25 13:02:37 INFO    __main__                         |   [baseline fold 2/16] year=2009/2010  xgb=1.2643  nardl=1.4286  actual=1.5630
+2026-04-25 13:02:46 INFO    __main__                         |   [baseline fold 3/16] year=2010/2011  xgb=1.5381  nardl=1.8678  actual=1.9161
+2026-04-25 13:02:55 INFO    __main__                         |   [baseline fold 4/16] year=2011/2012  xgb=1.5865  nardl=1.5895  actual=1.5202
+2026-04-25 13:03:04 INFO    __main__                         |   [baseline fold 5/16] year=2012/2013  xgb=1.2680  nardl=1.2944  actual=1.2434
+2026-04-25 13:03:11 INFO    __main__                         |   [baseline fold 6/16] year=2013/2014  xgb=1.4730  nardl=1.3707  actual=1.4844
+2026-04-25 13:03:16 INFO    __main__                         |   [baseline fold 7/16] year=2014/2015  xgb=1.5213  nardl=1.1307  actual=1.4708
+2026-04-25 13:03:22 INFO    __main__                         |   [baseline fold 8/16] year=2015/2016  xgb=1.1898  nardl=1.3898  actual=1.4200
+2026-04-25 13:03:26 INFO    __main__                         |   [baseline fold 9/16] year=2016/2017  xgb=1.4370  nardl=1.5822  actual=1.6031
+2026-04-25 13:03:35 INFO    __main__                         |   [baseline fold 10/16] year=2017/2018  xgb=1.1947  nardl=1.4113  actual=1.4721
+2026-04-25 13:03:39 INFO    __main__                         |   [baseline fold 11/16] year=2018/2019  xgb=0.7662  nardl=1.1957  actual=1.2333
+2026-04-25 13:03:42 INFO    __main__                         |   [baseline fold 12/16] year=2019/2020  xgb=1.3701  nardl=1.5438  actual=1.4427
+2026-04-25 13:03:44 INFO    __main__                         |   [baseline fold 13/16] year=2020/2021  xgb=1.5191  nardl=1.8996  actual=1.7731
+2026-04-25 13:03:50 INFO    __main__                         |   [baseline fold 14/16] year=2021/2022  xgb=1.6557  nardl=1.8297  actual=1.8181
+2026-04-25 13:03:57 INFO    __main__                         |   [baseline fold 15/16] year=2022/2023  xgb=1.4725  nardl=1.4770  actual=1.4352
+2026-04-25 13:04:04 INFO    __main__                         |   [baseline fold 16/16] year=2023/2024  xgb=1.5843  nardl=1.6148  actual=1.5608
+2026-04-25 13:04:04 INFO    __main__                         | Stage 2 rolling-origin CV (variant=preseason): 16 folds planned
+2026-04-25 13:04:12 INFO    __main__                         |   [preseason fold 2/16] year=2009/2010  xgb=1.1657  nardl=0.9839  actual=1.5630
+2026-04-25 13:04:21 INFO    __main__                         |   [preseason fold 3/16] year=2010/2011  xgb=1.4155  nardl=1.7795  actual=1.9161
+2026-04-25 13:04:29 INFO    __main__                         |   [preseason fold 4/16] year=2011/2012  xgb=1.9785  nardl=2.3028  actual=1.5202
+2026-04-25 13:04:37 INFO    __main__                         |   [preseason fold 5/16] year=2012/2013  xgb=1.7319  nardl=1.2904  actual=1.2434
+2026-04-25 13:04:43 INFO    __main__                         |   [preseason fold 6/16] year=2013/2014  xgb=1.2337  nardl=0.8782  actual=1.4844
+2026-04-25 13:04:49 INFO    __main__                         |   [preseason fold 7/16] year=2014/2015  xgb=1.3788  nardl=1.6583  actual=1.4708
+2026-04-25 13:04:55 INFO    __main__                         |   [preseason fold 8/16] year=2015/2016  xgb=1.4593  nardl=1.3431  actual=1.4200
+2026-04-25 13:05:01 INFO    __main__                         |   [preseason fold 9/16] year=2016/2017  xgb=1.4470  nardl=1.1468  actual=1.6031
+2026-04-25 13:05:07 INFO    __main__                         |   [preseason fold 10/16] year=2017/2018  xgb=1.7242  nardl=2.0258  actual=1.4721
+2026-04-25 13:05:11 INFO    __main__                         |   [preseason fold 11/16] year=2018/2019  xgb=1.4993  nardl=1.3219  actual=1.2333
+2026-04-25 13:05:14 INFO    __main__                         |   [preseason fold 12/16] year=2019/2020  xgb=0.9816  nardl=0.9890  actual=1.4427
+2026-04-25 13:05:17 INFO    __main__                         |   [preseason fold 13/16] year=2020/2021  xgb=1.3962  nardl=2.3066  actual=1.7731
+2026-04-25 13:05:19 INFO    __main__                         |   [preseason fold 14/16] year=2021/2022  xgb=1.4673  nardl=2.2117  actual=1.8181
+2026-04-25 13:05:25 INFO    __main__                         |   [preseason fold 15/16] year=2022/2023  xgb=1.6566  nardl=1.8392  actual=1.4352
+2026-04-25 13:05:31 INFO    __main__                         |   [preseason fold 16/16] year=2023/2024  xgb=1.5865  nardl=1.1176  actual=1.5608
+2026-04-25 13:05:31 INFO    __main__                         | 
+=== Stage 2 XGBoost ===
+2026-04-25 13:05:31 INFO    __main__                         |   variant   model  RMSE_log  MAPE_level_%
+ baseline XGBoost    0.2128         14.44
+ baseline   NARDL    0.1101          7.47
+preseason XGBoost    0.3282         28.48
+preseason   NARDL    0.4401         40.96
+2026-04-25 13:05:31 INFO    __main__                         |   variant                 comparison      DM     HLN  p_value  n_pairs
+ baseline XGBoost vs NARDL (Stage 2)  1.8265  1.7685   0.0770       16
+preseason XGBoost vs NARDL (Stage 2) -1.8450 -1.7825   0.0747       15
+2026-04-25 13:05:32 INFO    dissertation.run_all             | [6/8] DONE : step4b_xgb_stage2_annual.py in 195.0s
+2026-04-25 13:05:32 INFO    dissertation.run_all             | ------------------------------------------------------------------------------
+2026-04-25 13:05:32 INFO    dissertation.run_all             | [7/8] START: step5_robustness.py
+2026-04-25 13:05:33 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 13:05:33 INFO    dissertation.runner              | Pipeline log: C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\logs\pipeline_20260425T095320Z.log
+2026-04-25 13:05:33 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 13:05:43 INFO    __main__                         | 
+=== 3.7.2 alt international benchmarks ===
+2026-04-25 13:05:43 INFO    __main__                         |  n_obs  p  q  r  p_sbc  q_sbc  r_sbc    selection  include_fx international   theta1   L_pos   L_neg  wald_LR_p  wald_SR_p  bounds_F   bdm_t  half_life_m     R2      BIC benchmark
+   296  1  2  0      1      0      0 BG-augmented        True      ny_usdkg -0.28961 0.83445 0.70390     0.0001     0.0573   18.0723 -7.1528        2.027 0.3442 -279.015  ny_usdkg
+   294  1  1  1      1      0      0 BG-augmented        True     ico_usdkg -0.30629 0.84995 0.74643     0.0185     0.5560   17.8500 -7.0381        1.895 0.3476 -282.649 ico_usdkg
+   296  2  2  0      1      0      0 BG-augmented        True     col_usdkg -0.30980 0.84798 0.72089     0.0004     0.2833   14.2848 -6.4637        1.869 0.3578 -279.542 col_usdkg
+2026-04-25 13:05:43 INFO    __main__                         | 
+=== 3.7.3 Stage 1 ablation ===
+2026-04-25 13:05:43 INFO    __main__                         |         variant  n_features  in_sample_RMSE_log
+       baseline          12            0.026856
+drop_volatility          10            0.031130
+    drop_shocks          10            0.026203
+       drop_ECT          11            0.028520
+2026-04-25 13:05:43 INFO    __main__                         | 
+=== 3.7.4 Stage 2 ablation ===
+2026-04-25 13:05:43 INFO    __main__                         |             variant  n_features  in_sample_RMSE_log
+           baseline           6            0.003865
+drop_ECT_and_shocks           3            0.005659
+2026-04-25 13:05:43 INFO    __main__                         | 
+=== 3.7.5 cherry descriptive (5-year window) ===
+2026-04-25 13:05:43 INFO    __main__                         | coffee_year  cherry_keskg  fg_usdkg_clean  cherry_clean_usdkg  abs_diff_usdkg  pct_diff
+  2019/2020         51.27          4.2321              4.2766          0.0445    1.0524
+  2020/2021         86.79          5.8892              6.9578          1.0685   18.1439
+  2021/2022         78.99          6.1599              5.9708          0.1891   -3.0699
+  2022/2023         71.97          4.2006              4.7185          0.5179   12.3287
+  2023/2024         81.05          4.7624              5.0727          0.3103    6.5154
+2026-04-25 13:05:44 INFO    dissertation.run_all             | [7/8] DONE : step5_robustness.py in 12.3s
+2026-04-25 13:05:44 INFO    dissertation.run_all             | ------------------------------------------------------------------------------
+2026-04-25 13:05:44 INFO    dissertation.run_all             | [8/8] START: step6_figures.py
+2026-04-25 13:05:45 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 13:05:45 INFO    dissertation.runner              | Pipeline log: C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\logs\pipeline_20260425T095320Z.log
+2026-04-25 13:05:45 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 13:05:49 INFO    __main__                         | Wrote figures to C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\figures
+2026-04-25 13:05:49 INFO    dissertation.run_all             | [8/8] DONE : step6_figures.py in 4.9s
+2026-04-25 13:05:49 INFO    dissertation.run_all             | ==============================================================================
+2026-04-25 13:05:49 INFO    dissertation.run_all             | Pipeline completed successfully in 748.6s (~12.5 minutes)
+2026-04-25 13:05:49 INFO    dissertation.run_all             | Tables : C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\tables
+2026-04-25 13:05:49 INFO    dissertation.run_all             | Figures: C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\figures
+2026-04-25 13:05:49 INFO    dissertation.run_all             | Log    : C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\logs\pipeline_20260425T095320Z.log

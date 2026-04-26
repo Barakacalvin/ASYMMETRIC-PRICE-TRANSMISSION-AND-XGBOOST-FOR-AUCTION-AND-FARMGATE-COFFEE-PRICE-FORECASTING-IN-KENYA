@@ -1,0 +1,5 @@
+variant,n_features,in_sample_RMSE_log
+baseline,12,0.026856092886432443
+drop_volatility,10,0.031129530781728025
+drop_shocks,10,0.02620321835479014
+drop_ECT,11,0.028520338948320303

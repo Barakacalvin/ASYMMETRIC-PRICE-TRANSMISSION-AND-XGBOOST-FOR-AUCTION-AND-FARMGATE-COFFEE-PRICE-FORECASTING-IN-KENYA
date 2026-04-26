@@ -1,0 +1,2 @@
+spec,n_obs,p,q,r,p_sbc,q_sbc,r_sbc,selection,include_fx,international,theta1,L_pos,L_neg,wald_LR_p,wald_SR_p,bounds_F,bdm_t,half_life_m,R2,BIC
+NY (FX-free),298,1,0,0,1,0,0,SBC-only,False,ny_usdkg,-0.25799,0.85233,0.79084,0.004,0.0175,14.6678,-6.4245,2.323,0.3093,-300.677

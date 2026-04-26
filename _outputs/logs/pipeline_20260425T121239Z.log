@@ -1,0 +1,26 @@
+2026-04-25 15:12:39 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 15:12:39 INFO    dissertation.runner              | Pipeline log: C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\logs\pipeline_20260425T121239Z.log
+2026-04-25 15:12:39 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 15:12:39 INFO    iter2_1_diagnostic               | Iteration 2.1 — Stage 1 NARDL break-dummy diagnostic
+2026-04-25 15:12:39 INFO    iter2_1_diagnostic               |   Reference: iter-2 NY+FX baseline (p=1, q=2, r=0), BG12 p = 0.0003
+2026-04-25 15:12:39 INFO    iter2_1_diagnostic               |   Binseg-derived break dates loaded: 5 breaks
+2026-04-25 15:12:39 INFO    iter2_1_diagnostic               |     1999/2000-m09      -> 2000-06
+2026-04-25 15:12:39 INFO    iter2_1_diagnostic               |     2004/2005-m04      -> 2005-01
+2026-04-25 15:12:39 INFO    iter2_1_diagnostic               |     2006/2007-m10      -> 2007-07
+2026-04-25 15:12:39 INFO    iter2_1_diagnostic               |     2020/2021-m01      -> 2020-10
+2026-04-25 15:12:39 INFO    iter2_1_diagnostic               |     2021/2022-m10      -> 2022-07
+2026-04-25 15:12:39 INFO    iter2_1_diagnostic               |   Generated dummy columns: ['D_19992000_m09', 'D_20042005_m04', 'D_20062007_m10', 'D_20202021_m01', 'D_20212022_m10']
+2026-04-25 15:12:39 INFO    iter2_1_diagnostic               | 
+=== Stage 1 break-dummy diagnostic ===
+                                      variant  n_obs  p  q  r  n_dummies   theta1   L_pos   L_neg  wald_LR_p  bounds_F   bdm_t  half_life_m  BG12_p      BIC
+          iter-2 baseline (NY+FX, no dummies)    296  1  2  0          0 -0.28961 0.83445 0.70390     0.0001   18.0723 -7.1528        2.027  0.0003 -279.015
+iter-2.1 diagnostic (NY+FX + 5 break dummies)    296  1  2  0          5 -0.34795 0.60050 0.62216     0.6583   23.0406 -8.0233        1.621  0.0035 -268.222
+2026-04-25 15:12:39 INFO    iter2_1_diagnostic               | Wrote: C:\Users\cbaraka.AFA\OneDrive - University of East London\Masters\Dissertation\Codes\Iteration_2\_outputs\tables\nardl_stage1_break_dummies_diagnostic.csv
+2026-04-25 15:12:39 INFO    iter2_1_diagnostic               | 
+Verdict:
+2026-04-25 15:12:39 INFO    iter2_1_diagnostic               |   BG(12) p:  0.0003 -> 0.0035   (Δ = +0.0032)
+2026-04-25 15:12:39 INFO    iter2_1_diagnostic               |   BG(12) STILL REJECTS at 1%% — residual SC is not regime-driven.
+2026-04-25 15:12:39 INFO    iter2_1_diagnostic               |   Bounds F:  18.072 -> 23.041   (Δ = +4.968)
+2026-04-25 15:12:39 INFO    iter2_1_diagnostic               |   L⁺:        0.8345 -> 0.6005
+2026-04-25 15:12:39 INFO    iter2_1_diagnostic               |   L⁻:        0.7039 -> 0.6222
+2026-04-25 15:12:39 INFO    iter2_1_diagnostic               |   Wald LR p: 0.0001 -> 0.6583

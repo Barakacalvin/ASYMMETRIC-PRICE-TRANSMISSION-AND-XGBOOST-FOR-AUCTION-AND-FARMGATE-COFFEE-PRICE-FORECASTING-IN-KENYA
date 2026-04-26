@@ -1,0 +1,5 @@
+spec,n_obs,p,q,r,p_sbc,q_sbc,r_sbc,selection,include_fx,international,theta1,L_pos,L_neg,wald_LR_p,wald_SR_p,bounds_F,bdm_t,half_life_m,R2,BIC
+NY + FX,296,1,2,0,1,0,0,BG-augmented,True,ny_usdkg,-0.28961,0.83445,0.7039,0.0001,0.0573,18.0723,-7.1528,2.027,0.3442,-279.015
+NY (FX-free),298,1,0,0,1,0,0,SBC-only,False,ny_usdkg,-0.25799,0.85233,0.79084,0.004,0.0175,14.6678,-6.4245,2.323,0.3093,-300.677
+Colombian + FX,296,2,2,0,1,0,0,BG-augmented,True,col_usdkg,-0.3098,0.84798,0.72089,0.0004,0.2833,14.2848,-6.4637,1.869,0.3578,-279.542
+Colombian (FX-free),296,1,2,0,1,0,0,BG-augmented,False,col_usdkg,-0.29634,0.87012,0.81677,0.0145,0.3364,17.1011,-7.0542,1.972,0.3343,-285.979

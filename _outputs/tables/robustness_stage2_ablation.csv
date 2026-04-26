@@ -1,0 +1,3 @@
+variant,n_features,in_sample_RMSE_log
+baseline,6,0.0038646040560445143
+drop_ECT_and_shocks,3,0.005659497736934198

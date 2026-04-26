@@ -1,0 +1,5 @@
+variant,model,RMSE_log,MAPE_level_%
+baseline,XGBoost,0.2128,14.44
+baseline,NARDL,0.1101,7.47
+preseason,XGBoost,0.3282,28.48
+preseason,NARDL,0.4401,40.96

@@ -1,0 +1,3 @@
+model,RMSE_log,MAPE_level_%
+XGBoost,0.164,12.47
+NARDL,0.1474,11.25

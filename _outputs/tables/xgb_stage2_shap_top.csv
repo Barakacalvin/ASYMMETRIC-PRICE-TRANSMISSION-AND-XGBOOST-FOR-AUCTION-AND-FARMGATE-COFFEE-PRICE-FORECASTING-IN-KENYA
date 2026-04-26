@@ -1,0 +1,13 @@
+variant,feature,mean_abs_shap
+baseline,Auction_USDkg,0.232
+baseline,NY_Futures_USDkg,0.1035
+baseline,AUC_Shock_Pos_cum,0.087
+baseline,Stage2_ECT_lag1,0.0088
+baseline,Farmgate_USDkg_lag1,0.0067
+baseline,AUC_Shock_Neg_cum,0.0016
+preseason,NY_Futures_USDkg_lag1,0.1103
+preseason,AUC_Shock_Neg_cum_lag1,0.0772
+preseason,AUC_Shock_Pos_cum_lag1,0.0768
+preseason,Auction_USDkg_lag1,0.0706
+preseason,Stage2_ECT_lag1_lag1,0.0526
+preseason,Farmgate_USDkg_lag1,0.0294

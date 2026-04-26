@@ -1,0 +1,10 @@
+2026-04-25 08:55:36 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 08:55:36 INFO    dissertation.runner              | Pipeline log: /sessions/vibrant-eager-gauss/mnt/Dissertation/Codes/Iteration_2/_outputs/logs/pipeline_20260425T085536Z.log
+2026-04-25 08:55:36 INFO    dissertation.runner              | ==============================================================================
+2026-04-25 08:55:36 INFO    __main__                         | Reading: /sessions/vibrant-eager-gauss/mnt/Dissertation/Codes/Iteration_2/Data/Datasets for Modelling  Updated Final.xlsx
+2026-04-25 08:55:37 INFO    __main__                         | Monthly panel:  312 rows   (expected 312, range 1998/1999 .. 2023/2024)
+2026-04-25 08:55:37 INFO    __main__                         | Annual panel :   26 rows   (expected 26)
+2026-04-25 08:55:37 INFO    __main__                         | 
+Wrote /sessions/vibrant-eager-gauss/mnt/Dissertation/Codes/Iteration_2/_outputs/data/monthly_clean.csv
+2026-04-25 08:55:37 INFO    __main__                         | Wrote /sessions/vibrant-eager-gauss/mnt/Dissertation/Codes/Iteration_2/_outputs/data/annual_clean.csv
+2026-04-25 08:55:37 INFO    __main__                         | Wrote /sessions/vibrant-eager-gauss/mnt/Dissertation/Codes/Iteration_2/_outputs/data/data_audit.json
