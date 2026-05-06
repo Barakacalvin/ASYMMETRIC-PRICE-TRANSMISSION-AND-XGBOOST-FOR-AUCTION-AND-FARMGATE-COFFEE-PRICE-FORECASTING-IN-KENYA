@@ -36,7 +36,7 @@ warnings.filterwarnings("ignore")
 np.random.seed(C.RANDOM_SEED)
 
 
-# ============================================================ 3.7.2
+# -> 3.7.2
 def alt_international_benchmarks(monthly: pd.DataFrame) -> pd.DataFrame:
     rows = []
     for ref in ("ny_usdkg", "ico_usdkg", "col_usdkg"):
@@ -51,7 +51,7 @@ def alt_international_benchmarks(monthly: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-# ============================================================ 3.7.3 / 3.7.4
+# -> 3.7.3 / 3.7.4
 def stage1_ablation(monthly: pd.DataFrame) -> pd.DataFrame:
     """Ablation on the in-sample Stage 1 XGBoost, full-sample fit, log-target.
 
@@ -114,7 +114,7 @@ def stage2_ablation(annual: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-# ============================================================ 3.7.5
+# -> 3.7.5
 def cherry_descriptive(annual: pd.DataFrame,
                        payout_assumption: float = 0.80,
                        cherry_to_clean: float = 7.0) -> pd.DataFrame:
@@ -139,7 +139,7 @@ def cherry_descriptive(annual: pd.DataFrame,
               "cherry_clean_usdkg", "abs_diff_usdkg", "pct_diff"]].round(4)
 
 
-# ============================================================ main
+# --> main
 def main():
     monthly = pd.read_csv(C.DATA_OUT / "monthly_clean.csv")
     annual  = pd.read_csv(C.DATA_OUT / "annual_clean.csv")
