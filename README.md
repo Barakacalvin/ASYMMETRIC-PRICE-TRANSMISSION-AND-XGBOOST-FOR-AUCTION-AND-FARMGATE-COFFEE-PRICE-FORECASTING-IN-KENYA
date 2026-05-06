@@ -23,16 +23,10 @@ appears in Chapter 4.
 ## Methodology choices documented elsewhere
 
 > Hyperparameter optimisation was performed using Optuna's Tree-structured
-> Parzen Estimator sampler, capped at 50 trials to limit small-sample
-> overfitting and preserve computational reproducibility.
+> Parzen Estimator sampler, capped at 50 trials to limit small-sample overfitting and preserve computational reproducibility.
 
-> Structural breaks were detected using a Bai–Perron-style multiple-break
-> procedure implemented through the `ruptures` library. Because no maintained
-> Python package implements the full Bai–Perron sequential supF testing
-> protocol, the study uses binary segmentation as a computational
-> approximation and treats the resulting break dates as diagnostic regime
-> indicators rather than as formal Bai–Perron test outcomes. PELT is reported
-> as a robustness comparison.
+> Structural breaks were detected using a Bai–Perron-style multiple-break procedure implemented through the `ruptures` library. Because no maintained
+> Python package implements the full Bai–Perron sequential supF testing protocol, the study uses binary segmentation as a computational approximation and treats the resulting break dates as diagnostic regime indicators rather than as formal Bai–Perron test outcomes. PELT is reported as a robustness comparison.
 
 ## Requirements
 
