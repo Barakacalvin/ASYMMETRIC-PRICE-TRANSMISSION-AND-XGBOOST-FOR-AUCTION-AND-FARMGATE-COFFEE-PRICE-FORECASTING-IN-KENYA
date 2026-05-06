@@ -1,5 +1,5 @@
 """
-step4a_xgb_stage1_monthly.py
+step4a_xgb_stage1_monthly.py -> Models the upstream prediction i.e the Auction Prices with reference to Global indicators (ICIP, NY Futures and the Columbian Milds)
 ----------------------------
 Stage 1 XGBoost predictive comparator: monthly auction price (USD/kg).
 Twelve features per Chapter 3 v3 §3.6.3 (one-month-ahead horizon, all features lagged).
