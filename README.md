@@ -1,11 +1,11 @@
 # Kenya Coffee Asymmetric Price Transmission — Analysis Pipeline
 
 MSc Data Science Dissertation — Calvin Baraka Rimba, UEL DS-7010
-Aligned with **Methodology Register v2** and **Chapter 3 v3**.
+Aligned with **Methodology Register v2** and **Chapter 3**.
 
 This pipeline implements the two-stage NARDL specification with the parallel
 XGBoost predictive comparator and produces every table and figure that
-appears in Chapter 4 of the dissertation.
+appears in Chapter 4.
 
 ## What the pipeline does
 
