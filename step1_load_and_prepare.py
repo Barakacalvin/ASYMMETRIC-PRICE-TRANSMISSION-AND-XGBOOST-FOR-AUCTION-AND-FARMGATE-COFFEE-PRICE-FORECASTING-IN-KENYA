@@ -1,11 +1,9 @@
 """
 step1_load_and_prepare.py
 -------------------------
-Load the master workbook, harmonise units to USD/kg, align all monthly series
-to the Kenyan coffee year (October = month 1, September = month 12), build the
-26 x 12 = 312 monthly panel and the 26-year annual panel.
+This script is to be used to load the master workbook, harmonise units to USD/kg, align all monthly series to the Kenyan coffee year (October = month 1, September = month 12), build the 26 x 12 = 312 monthly panel and the 26-year annual panel.
 
-Implements Chapter 3 v3 sections 3.3.1, 3.3.2 and 3.3.3.
+Implements Chapter 3 of the dissertation specifically sections 3.3.1, 3.3.2 and 3.3.3.
 
 Outputs
 -------
@@ -75,7 +73,7 @@ def _sample_filter(df: pd.DataFrame) -> pd.DataFrame:
     return df.loc[mask].reset_index(drop=True)
 
 
-# ============================================================ load
+# -> load
 def load_workbook():
     log.info(f"Reading: {C.WORKBOOK}")
     wb = openpyxl.load_workbook(C.WORKBOOK, data_only=True)
@@ -87,7 +85,7 @@ def build_monthly_panel(wb) -> pd.DataFrame:
     icip = wb["ICIP_NY-Futures_Auct_Columbian"]
     fxws = wb["Exchange_Rate_Data"]
 
-    # --- international references (cents/lb -> USD/kg) ---------------
+    # -> international references (cents/lb -> USD/kg) <-
     series_cfg = [
         ("New York Futures",          "ny_usdkg",   C.CENTS_PER_LB_TO_USD_PER_KG),
         ("ICO Composite Indicator",   "ico_usdkg",  C.CENTS_PER_LB_TO_USD_PER_KG),
@@ -117,7 +115,7 @@ def build_monthly_panel(wb) -> pd.DataFrame:
         else:
             monthly = monthly.merge(d, on=["calendar_year", "calendar_month"], how="outer")
 
-    # --- exchange rate (USD/KES already a rate, not a price) ---------
+    # -> exchange rate (USD/KES already a rate, not a price) <-
     fx_rows = []
     for r in range(2, fxws.max_row + 1):
         cy_str = fxws.cell(r, 5).value
@@ -135,14 +133,14 @@ def build_monthly_panel(wb) -> pd.DataFrame:
     fx = pd.DataFrame(fx_rows)
     monthly = monthly.merge(fx, on=["calendar_year", "calendar_month"], how="left")
 
-    # --- coffee-year indexing ----------------------------------------
+    # -> coffee-year indexing <-
     monthly[["coffee_year", "coffee_year_month"]] = monthly.apply(
         lambda r: pd.Series(_to_coffee_year_index(int(r["calendar_year"]),
                                                    int(r["calendar_month"]))),
         axis=1,
     )
 
-    # ordering and filter
+    # -> ordering and filter <-
     monthly["recess_flag"] = monthly.get("recess_flag", False).fillna(False).astype(bool)
     monthly = monthly[[
         "coffee_year", "coffee_year_month",
@@ -183,7 +181,7 @@ def build_annual_panel(wb, monthly: pd.DataFrame) -> pd.DataFrame:
     annual = _sample_filter(annual)
     annual["fg_usdkg_clean"] = pd.to_numeric(annual["fg_usdkg_clean"], errors="coerce")
 
-    # within-CY auction mean, recess excluded
+    # -> within-CY auction mean, recess excluded <-
     nrecess = (monthly.assign(
         is_recess=monthly["recess_flag"] | monthly["auc_usdkg"].isna()
     ).groupby("coffee_year")["is_recess"].sum().reset_index()
@@ -197,7 +195,7 @@ def build_annual_panel(wb, monthly: pd.DataFrame) -> pd.DataFrame:
     annual = annual.merge(grp, on="coffee_year", how="left")
     annual = annual.merge(nrecess, on="coffee_year", how="left")
 
-    # within-CY means for international references and FX
+    # -> within-CY means for international references and FX <-
     for src, name in [("ny_usdkg", "ny_usdkg_mean"),
                       ("ico_usdkg", "ico_usdkg_mean"),
                       ("col_usdkg", "col_usdkg_mean"),
@@ -210,7 +208,7 @@ def build_annual_panel(wb, monthly: pd.DataFrame) -> pd.DataFrame:
     return annual
 
 
-# ============================================================ main
+# -> main
 def main():
     wb = load_workbook()
     monthly = build_monthly_panel(wb)
