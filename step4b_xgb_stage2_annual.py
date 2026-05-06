@@ -1,5 +1,5 @@
 """
-step4b_xgb_stage2_annual.py
+step4b_xgb_stage2_annual.py -> Models the Downstream price predictions (Farmgate)
 ---------------------------
 Stage 2 XGBoost: annual farmgate clean-equivalent (USD/kg).
 Six features per Chapter 3 v3 §3.6.4.
@@ -49,7 +49,7 @@ optuna.logging.set_verbosity(optuna.logging.WARNING)
 np.random.seed(C.RANDOM_SEED)
 
 
-# ============================================================ feature builder
+# -> feature builder
 FEAT_BASELINE = [
     "NY_Futures_USDkg",        # coffee-year mean (contemporaneous)
     "Auction_USDkg",           # coffee-year mean (contemporaneous)
@@ -267,7 +267,7 @@ def diebold_mariano_hln(y, p1, p2, h=1):
     return dm, hln, p
 
 
-# ============================================================ main
+# -> main
 def main():
     annual = pd.read_csv(C.DATA_OUT / "annual_clean.csv")
     metrics_rows, dm_rows, pred_rows = [], [], []
