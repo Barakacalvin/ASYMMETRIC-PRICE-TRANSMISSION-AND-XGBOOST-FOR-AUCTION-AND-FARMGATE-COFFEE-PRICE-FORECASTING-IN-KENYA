@@ -1,8 +1,8 @@
 """
 step6_figures.py
 ----------------
-Publication-quality PNG figures for Chapter 4. Reads the CSV outputs produced
-by steps 1–5. All plots are saved at 300 dpi to Codes/_outputs/figures/.
+This script is used for the publication-quality PNG figures for Chapter 4. Reads the CSV outputs producedby steps 1–5. 
+All plots are saved at 300 dpi to Codes/_outputs/figures/.
 
 Figures
 -------
