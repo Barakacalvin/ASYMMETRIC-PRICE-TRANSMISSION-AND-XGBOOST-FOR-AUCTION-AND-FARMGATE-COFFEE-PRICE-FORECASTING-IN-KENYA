@@ -1,19 +1,13 @@
 """
 step2_diagnostics.py
 --------------------
-Stationarity battery (ADF + Phillips-Perron + KPSS) and Bai-Perron-style
-multiple-break detection via the `ruptures` library (Binseg primary,
-PELT robustness).
+Stationarity battery (ADF + Phillips-Perron + KPSS) and Bai-Perron-style multiple-break detection via the `ruptures` library (Binseg primary, PELT robustness).
+Implements Chapter 3 soecifically sections 3.4.1 and 3.4.2. This executes after the running of step1_load_and_prepare.py for earlier sections of the chapter.
 
-Implements Chapter 3 v3 sections 3.4.1 and 3.4.2.
-
-Notes
+Implementation Notes
 -----
-*Bai-Perron-style*: no maintained Python package implements the full
-Bai-Perron sequential supF testing protocol. We use binary segmentation
-through `ruptures` as a computational approximation; the resulting break
-dates are treated as diagnostic regime indicators rather than as formal
-Bai-Perron test outcomes.
+*The code refers to the Bai-Perron-style*: There are no maintained Python packages that implement the full Bai-Perron sequential supF testing protocol. 
+We use binary segmentation through `ruptures` as a computational approximation; the resulting break dates are treated as diagnostic regime indicators rather than as formal Bai-Perron test outcomes.
 
 Outputs
 -------
@@ -36,7 +30,7 @@ log = get_logger(__name__)
 warnings.filterwarnings("ignore")
 np.random.seed(C.RANDOM_SEED)
 
-# ============================================================ unit roots
+# -> unit roots
 def _adf(s: np.ndarray, regression: str = "c") -> dict:
     s = s[~np.isnan(s)]
     out = adfuller(s, regression=regression, autolag="AIC")
@@ -92,7 +86,7 @@ def _verdict(adf_p: float, pp_p: float, kpss_p: float) -> str:
     return "ambiguous"
 
 
-# ============================================================ breaks
+# -> breaks
 def detect_breaks_binseg(signal: np.ndarray, n_max: int) -> list[int]:
     """Binary segmentation with at most n_max breaks. Returns break indices."""
     algo = rpt.Binseg(model=C.BAI_PERRON["binseg_model"]).fit(signal)
@@ -120,12 +114,12 @@ def break_dates_from_indices(monthly: pd.DataFrame, idx: list[int]) -> list[str]
     return out
 
 
-# ============================================================ main
+# -> main
 def main():
     monthly = pd.read_csv(C.DATA_OUT / "monthly_clean.csv")
     annual  = pd.read_csv(C.DATA_OUT / "annual_clean.csv")
 
-    # -------- unit-root battery --------
+    # -> unit-root battery <-
     series = {
         # monthly, in logs
         "lnNY"      : np.log(monthly["ny_usdkg"].dropna().values),
@@ -143,7 +137,7 @@ def main():
     log.info(ur.to_string(index=False))
     ur.to_csv(C.TAB_DIR / "unit_root.csv", index=False)
 
-    # -------- structural breaks (monthly auction series) --------
+    # -> structural breaks (monthly auction series) <- Baraka Calvin
     auc = monthly["auc_usdkg"].dropna().reset_index(drop=True)
     sig = np.log(auc.values).reshape(-1, 1)
 
