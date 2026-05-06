@@ -1,12 +1,11 @@
 """
 run_all.py
 ----------
-End-to-end runner for the v3-aligned pipeline.
+End-to-end runner for the final pipeline.
 
-- Opens ONE master log file and exports its path via DISSO_LOG_FILE so every
-  subprocess step writes into the same file.
+- Opens ONE master log file and exports its path via DISSO_LOG_FILE so every subprocess step writes into the same file.
 - Reports elapsed time per step and for the full run.
-- Aborts on first failing step and prints the offending script name.
+- Aborts on first failing step and prints the offending script name for ease of follow up and verification incase of process breaks
 """
 from __future__ import annotations
 import subprocess
