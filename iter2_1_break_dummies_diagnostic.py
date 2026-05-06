@@ -1,21 +1,14 @@
 """
 iter2_1_break_dummies_diagnostic.py
 -----------------------------------
-Iteration 2.1 — DIAGNOSTIC ONLY.
+Iteration 2.1 — I recommend use for Diagnostics only.
+The coding was done in 2 main iterations 1 and 2 with refinements done continuouslu to iteration 2.
 
-Question: does the Stage 1 NARDL residual serial correlation (BG(12) p ≈
-0.0003 in the iteration-2 NY+FX baseline) reflect regime shifts that the
-asymmetric-cumulative-shock decomposition does not absorb?
+Question: does the Stage 1 NARDL residual serial correlation (BG(12) p ≈ 0.0003 in the iteration-2 NY+FX baseline) reflect regime shifts that the asymmetric-cumulative-shock decomposition does not absorb?
 
-Approach: re-fit Stage 1 NARDL (NY+FX, BG-augmented (1,2,0)) with five
-Binseg-derived break-period dummies entered as exogenous controls in BOTH
-the level equation and the short-run dynamics. Compare BG(12) p, bounds F,
-BDM t, and asymmetric long-run multipliers against the iteration-2 baseline.
+Approach: re-fit Stage 1 NARDL (NY+FX, BG-augmented (1,2,0)) with five Binseg-derived break-period dummies entered as exogenous controls in BOTH the level equation and the short-run dynamics. Compare BG(12) p, bounds F, BDM t, and asymmetric long-run multipliers against the iteration-2 baseline.
 
-This script is DIAGNOSTIC ONLY. It does not replace the iteration-2 baseline
-or change any iteration-2 outputs. It writes a single CSV to
-_outputs/tables/nardl_stage1_break_dummies_diagnostic.csv and appends a log
-entry to the iteration-2 master log.
+I used this script for Diagnostics only. It does not replace the iteration-2 baseline or change any iteration-2 outputs. It writes a single CSV to _outputs/tables/nardl_stage1_break_dummies_diagnostic.csv and appends a log entry to the iteration-2 master log.
 
 Run from this folder:
     python iter2_1_break_dummies_diagnostic.py
