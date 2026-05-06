@@ -1,8 +1,7 @@
 """
-step3b_nardl_stage2.py
+step3b_nardl_stage2.py -> Downstream Transmission execution
 ----------------------
-Stage 2 NARDL: annual farmgate clean-equivalent price (USD/kg) on the
-within-coffee-year mean of monthly auction (USD/kg).
+Stage 2 NARDL: annual farmgate clean-equivalent price (USD/kg) on the within-coffee-year mean of monthly auction (USD/kg).
 
 Implements Chapter 3 v3 sections 3.5.2, 3.5.3, 3.5.4.
 
