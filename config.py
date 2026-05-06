@@ -4,11 +4,11 @@ config.py — central configuration for the Kenya coffee NARDL/XGBoost pipeline.
 All scripts import from this module so that paths, sample windows, random seeds
 and hyperparameter grids are defined in exactly one place.
 
-Aligned with Methodology Register v2 and Chapter 3 v3.
+Aligned with Methodology Register v2 and Chapter 3.
 """
 from pathlib import Path
 
-# ---------------------------------------------------------------- paths
+# -> paths
 # In the iteration-folder layout each Iteration_N/ is self-contained:
 #   Iteration_N/
 #       Data/           -- snapshot of the data this iteration was built on
@@ -29,23 +29,23 @@ MODEL_DIR  = OUT_DIR / "models"
 for p in (OUT_DIR, TAB_DIR, FIG_DIR, DATA_OUT, MODEL_DIR):
     p.mkdir(parents=True, exist_ok=True)
 
-# ---------------------------------------------------------------- sample
+# -> sample
 SAMPLE_START_COFFEE_YEAR = "1998/1999"   # October 1998
 SAMPLE_END_COFFEE_YEAR   = "2023/2024"   # September 2024
 N_COFFEE_YEARS_EXPECTED  = 26
 N_MONTHS_EXPECTED        = 312           # 26 * 12
 
-# ---------------------------------------------------------------- seeds
+# -> seeds
 RANDOM_SEED = 42
 
-# ---------------------------------------------------------------- NARDL
+# -> NARDL
 NARDL_S1_MAX_LAG = 12          # monthly stage
 NARDL_S2_MAX_LAG = 2           # annual stage; SBC selects 1 or 2
 LAG_CRITERION    = "bic"       # statsmodels SBC == BIC
 HAC_MAXLAGS      = 6           # Newey-West for Stage 1
 PSS_CASE         = 3           # intercept, no trend (Pesaran et al. 2001 Case III)
 
-# ---------------------------------------------------------------- XGBoost
+# -> XGBoost
 # Stage 1 monthly module
 XGB_STAGE1 = {
     "initial_train_months": 60,        # 5 coffee years
@@ -80,7 +80,7 @@ XGB_STAGE2 = {
     },
 }
 
-# ---------------------------------------------------------------- breaks
+# -> breaks
 BAI_PERRON = {
     "min_segment_length_months": 24,    # ~2 coffee years
     "n_breaks_max"             : 5,
@@ -89,7 +89,7 @@ BAI_PERRON = {
     "pelt_pen"                 : 10.0,  # tuned later inside step2
 }
 
-# ---------------------------------------------------------------- unit conversions
+# -> unit conversions
 CENTS_PER_LB_TO_USD_PER_KG = 1.0 / 100.0 / 0.45359237   # (cents/lb) -> USD/kg
 USD_PER_50KG_TO_USD_PER_KG = 1.0 / 50.0                 # USD/50kg   -> USD/kg
 
