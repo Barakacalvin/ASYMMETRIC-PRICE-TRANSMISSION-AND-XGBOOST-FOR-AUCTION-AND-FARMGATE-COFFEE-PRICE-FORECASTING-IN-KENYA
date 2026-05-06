@@ -1,7 +1,7 @@
 """
 iter2_1_break_dummies_diagnostic.py
 -----------------------------------
-Iteration 2.1 — I recommend use for Diagnostics only.
+Iteration 2.1 — I used this script for Diagnostics only.
 The coding was done in 2 main iterations 1 and 2 with refinements done continuouslu to iteration 2.
 
 Question: does the Stage 1 NARDL residual serial correlation (BG(12) p ≈ 0.0003 in the iteration-2 NY+FX baseline) reflect regime shifts that the asymmetric-cumulative-shock decomposition does not absorb?
