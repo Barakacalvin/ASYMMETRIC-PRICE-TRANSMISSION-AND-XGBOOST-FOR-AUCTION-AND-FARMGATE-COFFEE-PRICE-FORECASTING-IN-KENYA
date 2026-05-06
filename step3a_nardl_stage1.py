@@ -1,10 +1,9 @@
 """
-step3a_nardl_stage1.py
+step3a_nardl_stage1.py - Upstream transmission NARDL
 ----------------------
-Stage 1 NARDL: monthly auction price (USD/kg) on New York 'C' Futures (USD/kg)
-and the USD/KES exchange rate.
+Stage 1 NARDL: monthly auction price (USD/kg) on New York 'C' Futures (USD/kg) and the USD/KES exchange rate.
 
-Implements Chapter 3 v3 sections 3.5.1, 3.5.3, 3.5.4 and 3.7.6 (FX-free variant).
+Implements Chapter 3 v3 sections 3.5.1, 3.5.3, 3.5.4 and 3.7.6 (FX-free variant). FX free as prices in similar units just adjusted for similar weighting.
 
 Outputs
 -------
@@ -14,9 +13,7 @@ Codes/_outputs/tables/nardl_stage1_diagnostics.csv      (BG, BP, JB, CUSUM)
 Codes/_outputs/tables/nardl_stage1_cointegration.csv    (PSS bounds F, BDM t)
 Codes/_outputs/data/stage1_features_for_xgb.csv         (ECT_lag1, partial sums)
 
-Function `fit_stage1(monthly, include_fx=True, max_lag=...)` is reused
-inside the rolling-origin CV in step4a so that the NARDL is re-estimated
-within every training window without leakage.
+Function `fit_stage1(monthly, include_fx=True, max_lag=...)` is reused inside the rolling-origin CV in step4a so that the NARDL is re-estimated within every training window without leakage.
 """
 from __future__ import annotations
 import json
@@ -51,7 +48,7 @@ PSS_CRIT_K3_CASE3 = {  # k = NY+, NY-, FX
     "10pct" : (2.72, 3.77),
     "1pct"  : (4.29, 5.61),
 }
-# ITER2 change 3.4: PSS Case II (restricted intercept, no trend) -- Table CI(ii)
+# ITER2 change 3.4: PSS Case II (restricted intercept, no trend) -> Table CI(ii)
 PSS_CRIT_K2_CASE2 = {
     "5pct"  : (3.62, 4.16),
     "10pct" : (3.02, 3.51),
@@ -67,7 +64,7 @@ PSS_CRIT_K2 = PSS_CRIT_K2_CASE3
 PSS_CRIT_K3 = PSS_CRIT_K3_CASE3
 
 
-# ============================================================ shock series
+# -> shock series
 def cumulative_partial_sums(dx: pd.Series) -> tuple[pd.Series, pd.Series]:
     pos = dx.clip(lower=0).cumsum()
     neg = dx.clip(upper=0).cumsum()
@@ -96,7 +93,7 @@ def select_lags_sbc(y: pd.Series, X: pd.DataFrame,
     return int(best_p) if best_p is not None else 0
 
 
-# ============================================================ Stage 1 fit
+# -> Stage 1 fit
 def fit_stage1(monthly: pd.DataFrame,
                include_fx: bool = True,
                max_lag: int = None,
@@ -199,7 +196,7 @@ def fit_stage1(monthly: pd.DataFrame,
                 model = best_bg["model"]
                 dgn   = best_bg["design"]
 
-    # ---------------- coefficient table ----------------
+    # -> coefficient table <-
     coef = pd.DataFrame({
         "coef"   : model.params.round(5),
         "hac_se" : model.bse.round(5),
@@ -207,7 +204,7 @@ def fit_stage1(monthly: pd.DataFrame,
         "p"      : model.pvalues.round(4),
     })
 
-    # ---------------- long-run multipliers ----------------
+    # -> long-run multipliers <-
     theta1 = model.params["lnAUC_lag1"]
     theta_pos = model.params["NY_pos_lag1"]
     theta_neg = model.params["NY_neg_lag1"]
@@ -229,7 +226,7 @@ def fit_stage1(monthly: pd.DataFrame,
     for c in neg_sr: R2[names.index(c)] = -1
     wald_sr = model.wald_test(R2.reshape(1, -1), use_f=False)
 
-    # ---------------- PSS bounds + BDM ----------------
+    # -> PSS bounds + BDM <-
     R3 = np.zeros((3 if include_fx else 3, len(names)))
     R3[0, names.index("lnAUC_lag1")] = 1
     R3[1, names.index("NY_pos_lag1")] = 1
@@ -238,12 +235,12 @@ def fit_stage1(monthly: pd.DataFrame,
     # BDM t-statistic (Banerjee, Dolado & Mestre 1998) on lnAUC_lag1
     bdm_t = model.tvalues["lnAUC_lag1"]
 
-    # ---------------- diagnostics ----------------
+    # -> diagnostics <-
     bg = acorr_breusch_godfrey(model, nlags=12)
     bp = het_breuschpagan(model.resid, model.model.exog)
     jb = jarque_bera(model.resid)
 
-    # ---------------- residual-based ECT (confirmatory) ----------------
+    # -> residual-based ECT (confirmatory) <-
     # Build a single aligned frame, then dropna() jointly so endog and
     # exog share the same row index.
     static_cols = ["NY_pos_cum", "NY_neg_cum"] + (["lnFX"] if include_fx else [])
@@ -255,10 +252,10 @@ def fit_stage1(monthly: pd.DataFrame,
     df_ect["ECT"] = static.resid.values
     df_ect["ECT_lag1"] = df_ect["ECT"].shift(1)
 
-    # ---------------- half-life from conditional theta1 ----------------
+    # -> half-life from conditional theta1 <-
     half_life = (np.log(0.5) / np.log(1 + theta1)) if -1 < theta1 < 0 else np.nan
 
-    # ---------------- assemble outputs ----------------
+    # -> assemble outputs <-
     summary = pd.DataFrame([{
         "n_obs"           : int(model.nobs),
         "p"               : p,  "q": q, "r": r,
@@ -333,7 +330,7 @@ def _stage1_design(df: pd.DataFrame, p: int, q: int, r: int,
     return {"model": model, "y": y, "X": X, "df_used": est}
 
 
-# ============================================================ main
+# --> main
 def main():
     monthly = pd.read_csv(C.DATA_OUT / "monthly_clean.csv")
 
