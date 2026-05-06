@@ -1,9 +1,10 @@
 """
-logging_setup.py
+logging_setup.py - An important file to monitor the process as it ran. The Logging file was printed in terminal upon running. 
+I suggest will be grat for larger file executions.
 ----------------
 Single, shared logger configuration for the entire pipeline.
 
-Behaviour
+Expected Outputs
 ---------
 - Writes everything to Codes/_outputs/logs/pipeline_<UTC-timestamp>.log
 - Mirrors the same lines to stdout so you can watch progress live.
