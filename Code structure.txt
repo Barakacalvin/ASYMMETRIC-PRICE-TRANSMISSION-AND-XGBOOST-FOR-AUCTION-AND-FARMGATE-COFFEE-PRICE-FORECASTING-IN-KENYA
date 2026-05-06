@@ -1,7 +1,7 @@
 Codes/
-├── _legacy/                          (preserves the existing zip)
+├── _legacy/                         
 │   └── Python Code (legacy).zip
-├── README.md                         (new, v3-aligned)
+├── README.md                         
 ├── requirements.txt
 ├── config.py                         (paths, seeds, sample window, CV settings)
 ├── step1_load_and_prepare.py         (real workbook -> USD/kg, coffee-year indexed)
@@ -12,4 +12,4 @@ Codes/
 ├── step4b_xgb_stage2_annual.py       (6-feature, end-of-CY baseline + pre-season variant)
 ├── step5_dm_and_shap.py              (DM with HLN correction, SHAP on validation preds)
 ├── step6_robustness.py               (alt benchmarks, ablations, FX-free, cherry desc.)
-└── step7_figures.py                  (rebuilt to read v3 outputs)
+└── step7_figures.py                  (rebuilt to read final outputs)
