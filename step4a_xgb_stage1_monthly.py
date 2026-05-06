@@ -2,8 +2,7 @@
 step4a_xgb_stage1_monthly.py
 ----------------------------
 Stage 1 XGBoost predictive comparator: monthly auction price (USD/kg).
-Twelve features per Chapter 3 v3 §3.6.3 (one-month-ahead horizon, all features
-lagged).
+Twelve features per Chapter 3 v3 §3.6.3 (one-month-ahead horizon, all features lagged).
 
 Implements:
 - v3 §3.6.2: gradient-boosting objective
@@ -41,7 +40,7 @@ optuna.logging.set_verbosity(optuna.logging.WARNING)
 np.random.seed(C.RANDOM_SEED)
 
 
-# ============================================================ feature builder
+# -> feature builder
 def build_stage1_features(monthly_train: pd.DataFrame,
                           ect_features: pd.DataFrame) -> pd.DataFrame:
     """
@@ -89,7 +88,7 @@ def build_stage1_features(monthly_train: pd.DataFrame,
     return feats
 
 
-# ============================================================ Optuna tuner
+# -> Optuna tuner
 def tune_xgb(X: np.ndarray, y: np.ndarray,
              search_space: dict, n_trials: int,
              early_stopping: int) -> dict:
@@ -122,7 +121,7 @@ def tune_xgb(X: np.ndarray, y: np.ndarray,
     return study.best_params
 
 
-# ============================================================ rolling CV
+# -> rolling CV
 def rolling_origin_cv(monthly: pd.DataFrame) -> dict:
     """
     Expanding-window rolling-origin CV. NARDL is re-estimated inside every
@@ -297,7 +296,7 @@ def _nardl_one_step_ahead(nardl_result: dict,
     return pred_lnAUC
 
 
-# ============================================================ DM test
+# -> DM test
 def _nardl_fitted_levels_for_block(nardl_result, block: pd.DataFrame) -> np.ndarray:
     """
     ITER2 change 2.2 helper (fixed alignment).
@@ -381,7 +380,7 @@ def diebold_mariano_hln(y, p1, p2, h=1):
     return dm, hln, p
 
 
-# ============================================================ main
+# --> main
 def main():
     monthly = pd.read_csv(C.DATA_OUT / "monthly_clean.csv")
     cv = rolling_origin_cv(monthly)
